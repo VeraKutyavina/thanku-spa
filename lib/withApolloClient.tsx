@@ -8,7 +8,7 @@ import {
 import { useRouter } from "next/router";
 import nextWithApollo from "next-with-apollo";
 
-const withApollo = nextWithApollo(
+const withApolloClient = nextWithApollo(
     ({ initialState, headers }) => {
         return new ApolloClient({
             ssrMode: typeof window === "undefined",
@@ -33,4 +33,4 @@ const withApollo = nextWithApollo(
     }
 );
 
-export default withApollo;
+export default withApolloClient;
