@@ -12,7 +12,7 @@ export const FormContentWrapper = styled.div(
         padding: 0.62rem;
         font-size: 1rem;
         border-radius: 2px;
-        border: 1px solid ${colors.greyD6};
+        border: 1px solid ${colors.grey98};
         box-sizing: border-box;
       }
 

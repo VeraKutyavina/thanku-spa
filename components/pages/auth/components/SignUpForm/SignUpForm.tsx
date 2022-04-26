@@ -1,6 +1,7 @@
 import React from 'react';
 import * as Yup from 'yup';
 import AuthForm from '../AuthForm';
+import { Form, AuthFormWrapper } from './styled'
 import theme from 'public/theme';
 
 const SignUpForm = () => {
@@ -30,7 +31,11 @@ const SignUpForm = () => {
   };
   
   return(
-    <AuthForm form={form} theme={theme} />
+    <AuthFormWrapper>
+      <Form>
+        <AuthForm form={form} theme={theme} />
+      </Form>
+    </AuthFormWrapper>
   )
 }
 

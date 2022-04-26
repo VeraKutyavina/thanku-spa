@@ -20,7 +20,6 @@ export const TopLine = styled.div(
 );
 
 export const PageContent = styled.section`
-  max-width: 27.875rem;
   width: 100%;
   position: relative;
   z-index: 10;
