@@ -1,1 +1,1 @@
-export { default } from 'components/pages/auth';
+export { default } from 'components/pages/auth/signup';

@@ -21,6 +21,7 @@
     "baseUrl": "."
   },
   "include": [
+    "../declarations/*",
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
