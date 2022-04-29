@@ -1,10 +1,15 @@
-import React from 'react';
+import React, {PropsWithChildren} from 'react';
 
 import { StyledButton } from './styled';
 
-const Button = ({ children, type = 'button', testId, ...rest }) => {
+type ButtonProps = {
+  type: 'button' | 'submit' | 'reset' | unknown;
+  customStyles: Function | undefined;
+};
+
+const Button = ({ children, customStyles, type = 'button',  ...rest }: PropsWithChildren<ButtonProps>) => {
   return (
-    <StyledButton data-testid={testId} data-cy={testId} {...rest}>
+    <StyledButton customStyles={customStyles} {...rest}>
       {children}
     </StyledButton>
   );

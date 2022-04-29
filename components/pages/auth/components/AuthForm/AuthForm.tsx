@@ -2,10 +2,14 @@ import React from 'react';
 import mapKeys from 'lodash/mapKeys';
 import mapValues from 'lodash/mapValues';
 import * as Yup from 'yup';
-import { Formik, Field, ErrorMessage, Form as FormikForm } from 'formik';
+import theme from 'public/theme';
+import {Formik, Field, ErrorMessage, Form as FormikForm, FormikProps} from 'formik';
 
 import PasswordInput from 'components/shared/atoms/PaawordInput';
 import Button from 'components/shared/atoms/Button';
+import Arrow from 'public/images/icons/arrow.svg';
+
+import EmptyType from 'types/emptyType';
 
 import {
   FormContentWrapper,
@@ -15,10 +19,22 @@ import {
   ErrorWrapper,
   InputField,
   FormActions,
+  customButtonStyles
 } from './styled';
 
-const Form = ({ form, theme }) => {
+// TODO: fix thi types
+type formType = {
+  fields: any;
+  submit:  () => void;
+}
+
+type FormProps = {
+  form: formType;
+};
+
+const Form = ({ form } : FormProps) => {
   const { fields, submit } = form;
+
   const formByName = mapKeys(fields, 'name');
   const initialValues = mapValues(formByName, 'initialValue');
   const validationSchema = Yup.object().shape(mapValues(formByName, 'validationSchema'));
@@ -26,7 +42,7 @@ const Form = ({ form, theme }) => {
   return (
     <FormContentWrapper>
       <Formik enableReinitialize initialValues={initialValues} onSubmit={submit} validationSchema={validationSchema}>
-        {({ isSubmitting, status, errors, touched }) => (
+        {({ isSubmitting, status, errors, touched } : FormikProps<EmptyType>) => (
           <FormikForm>
             <FormContainer>
               {fields.map((field, i) => {
@@ -67,8 +83,9 @@ const Form = ({ form, theme }) => {
               })}
 
               <FormActions>
-                <Button type="submit" testId="submit-button">
+                <Button customStyles={customButtonStyles} type="submit">
                   Продолжить
+                  <Arrow />
                 </Button>
               </FormActions>
             </FormContainer>

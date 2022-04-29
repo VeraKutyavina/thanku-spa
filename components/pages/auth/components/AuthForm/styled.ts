@@ -93,3 +93,13 @@ export const InputIcon = styled.a`
     width: 22px;
   }
 `;
+
+export const customButtonStyles = ({ colors }) => css`
+  justify-content: space-between;
+  width: 50%;
+
+  path, svg {
+    fill: white;
+  }
+
+`;

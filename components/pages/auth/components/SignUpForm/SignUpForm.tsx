@@ -1,11 +1,21 @@
 import React from 'react';
 import * as Yup from 'yup';
-import AuthForm from '../AuthForm';
-import { Form, AuthFormWrapper } from './styled'
 import theme from 'public/theme';
+import AuthForm from '../AuthForm';
+import { REQUIRED_FIELD } from 'config/form';
+import { Form, AuthFormWrapper } from './styled'
 
 const SignUpForm = () => {
   const fields = [
+    {
+      type: 'text',
+      name: 'lastName',
+      title: 'Фамилия',
+      initialValue: '',
+      validationSchema: Yup.string()
+        .trim()
+        .required(REQUIRED_FIELD),
+    },
     {
       type: 'email',
       name: 'email',
@@ -14,14 +24,14 @@ const SignUpForm = () => {
       validationSchema: Yup.string()
         .trim()
         .email('Email должен быть валидный')
-        .required('Это поле необходимо для входа в систему'),
+        .required(REQUIRED_FIELD),
     },
     {
       type: 'password',
       name: 'password',
       title: 'Пароль',
       initialValue: '',
-      validationSchema: Yup.string().required('Используйте цифры и символы - это будет безопаснее'),
+      validationSchema: Yup.string().required(REQUIRED_FIELD),
     },
   ].filter(Boolean);
 
@@ -33,7 +43,8 @@ const SignUpForm = () => {
   return(
     <AuthFormWrapper>
       <Form>
-        <AuthForm form={form} theme={theme} />
+        <h2>Регистрация</h2>
+        <AuthForm form={form} />
       </Form>
     </AuthFormWrapper>
   )
