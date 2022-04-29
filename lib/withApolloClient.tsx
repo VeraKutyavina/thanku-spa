@@ -4,14 +4,14 @@ import {
     DefaultOptions,
     HttpLink,
     InMemoryCache,
-} from "@apollo/client";
-import { useRouter } from "next/router";
-import nextWithApollo from "next-with-apollo";
+} from '@apollo/client';
+import { useRouter } from 'next/router';
+import nextWithApollo from 'next-with-apollo';
 
-const withApollo = nextWithApollo(
+const withApolloClient = nextWithApollo(
     ({ initialState, headers }) => {
         return new ApolloClient({
-            ssrMode: typeof window === "undefined",
+            ssrMode: typeof window === 'undefined',
             link: new HttpLink({
                 uri: `${process.env.API_URL}/graphql`,
             }),
@@ -23,6 +23,7 @@ const withApollo = nextWithApollo(
     },
     {
         render: ({ Page, props }) => {
+            // eslint-disable-next-line react-hooks/rules-of-hooks
             const router = useRouter();
             return (
                 <ApolloProvider client={props.apollo}>
@@ -33,4 +34,4 @@ const withApollo = nextWithApollo(
     }
 );
 
-export default withApollo;
+export default withApolloClient;
