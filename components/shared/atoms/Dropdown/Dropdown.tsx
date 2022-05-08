@@ -1,4 +1,4 @@
-import React, {useState, useRef, useEffect, useCallback, PropsWithChildren, ReactComponentElement} from 'react';
+import React, { useState, useRef, useEffect, useCallback, PropsWithChildren, ReactComponentElement } from 'react';
 
 import { DropdownWrapper, DropdownToggler, DropdownList } from './styled';
 

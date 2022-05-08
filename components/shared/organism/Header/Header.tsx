@@ -20,7 +20,7 @@ const Header = () => {
         dropdown={
           <UserInfoWrapper>
             <ProfileImage avatar={null} />
-            <Name> Test T.T. </Name>
+            <Name> Test Test </Name>
           </UserInfoWrapper>
         }
       >
