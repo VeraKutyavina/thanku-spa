@@ -14,12 +14,13 @@ export enum Colors {
   link = '#00f',
   darkGrey = '#606c76',
   lightGrey = '#fdfbfb',
-  green = '#c2d4ad',
+  green = '#add4d1',
   grey98 = '#989FA7',
   red = '#D16684',
   grey = '#52525F',
   greenF2 = '#f2f4f0',
   brColor ='#E1EAF2',
+  shadow = '#F1F1F1',
 }
 
 export const up = (breakpoint: Breakpoints, vertical = false) =>

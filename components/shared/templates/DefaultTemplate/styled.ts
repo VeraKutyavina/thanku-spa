@@ -14,7 +14,7 @@ export const TopLine = styled.div(
     css`
       position: absolute;
       width: 100%;
-      height: 37vh;
+      height: 42vh;
       background-color: ${colors.green};
     `,
 );
