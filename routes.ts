@@ -3,4 +3,5 @@ const nextRoutes = require('next-routes');
 const routes = require('./config/routes');
 
 module.exports = nextRoutes()
-    .add(routes.AUTH)
+  .add(routes.SIGN_UP)
+  .add(routes.SIGN_IN)

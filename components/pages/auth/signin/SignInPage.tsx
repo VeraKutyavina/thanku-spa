@@ -2,14 +2,14 @@ import React from 'react';
 
 import withApolloClient from 'lib/withApolloClient';
 import AuthTemplate from 'components/shared/templates/AuthTemplate';
-import SignUpForm from '../components/SignUpForm';
+import SignInForm from '../components/SignInForm';
 
-const SignUpPage = () => {
+const SignInPage = () => {
   return (
     <AuthTemplate>
-      <SignUpForm />
+      <SignInForm />
     </AuthTemplate>
   );
 };
 
-export default withApolloClient(SignUpPage);
+export default withApolloClient(SignInPage);
