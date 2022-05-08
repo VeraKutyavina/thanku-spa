@@ -1,8 +1,10 @@
 import React from 'react';
 import * as Yup from 'yup';
+import Link from 'next/link';
 import mapKeys from 'lodash/mapKeys';
 import mapValues from 'lodash/mapValues';
 import theme from 'public/theme';
+import routes from 'config/routes';
 
 import PasswordInput from 'components/shared/atoms/PaawordInput';
 import Button from 'components/shared/atoms/Button';
@@ -84,7 +86,9 @@ const Form = ({ form } : FormProps) => {
 
               <FormActions>
                 <Button customStyles={customButtonStyles} type="submit">
-                  Продолжить
+                  <Link href={routes.HOME.pattern}>
+                    Продолжить
+                  </Link>
                   <Arrow />
                 </Button>
               </FormActions>

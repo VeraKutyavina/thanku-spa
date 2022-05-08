@@ -5,3 +5,5 @@ const routes = require('./config/routes');
 module.exports = nextRoutes()
   .add(routes.SIGN_UP)
   .add(routes.SIGN_IN)
+  .add(routes.HOME)
+  .add(routes.MENU)
