@@ -4,35 +4,8 @@ import AuthForm from '../AuthForm';
 import { REQUIRED_FIELD_VALIDATION, VALID_EMAIL_VALIDATION } from 'config/form';
 import { Form, AuthFormWrapper } from './styled'
 
-const SignUpForm = () => {
+const SignInForm = () => {
   const fields = [
-    {
-      type: 'text',
-      name: 'companyName',
-      title: 'Название компании',
-      initialValue: '',
-      validationSchema: Yup.string()
-        .trim()
-        .required(REQUIRED_FIELD_VALIDATION),
-    },
-    {
-      type: 'text',
-      name: 'firstName',
-      title: 'Имя',
-      initialValue: '',
-      validationSchema: Yup.string()
-        .trim()
-        .required(REQUIRED_FIELD_VALIDATION),
-    },
-    {
-      type: 'text',
-      name: 'lastName',
-      title: 'Фамилия',
-      initialValue: '',
-      validationSchema: Yup.string()
-        .trim()
-        .required(REQUIRED_FIELD_VALIDATION),
-    },
     {
       type: 'email',
       name: 'email',
@@ -60,11 +33,11 @@ const SignUpForm = () => {
   return(
     <AuthFormWrapper>
       <Form>
-        <h2>Регистрация</h2>
+        <h2>Вход в систему</h2>
         <AuthForm form={form} />
       </Form>
     </AuthFormWrapper>
   )
 }
 
-export default SignUpForm;
+export default SignInForm;

@@ -1,13 +1,13 @@
 import React from 'react';
+import * as Yup from 'yup';
 import mapKeys from 'lodash/mapKeys';
 import mapValues from 'lodash/mapValues';
-import * as Yup from 'yup';
 import theme from 'public/theme';
-import {Formik, Field, ErrorMessage, Form as FormikForm, FormikProps} from 'formik';
 
 import PasswordInput from 'components/shared/atoms/PaawordInput';
 import Button from 'components/shared/atoms/Button';
 import Arrow from 'public/images/icons/arrow.svg';
+import { Formik, Field, ErrorMessage, Form as FormikForm, FormikProps } from 'formik';
 
 import EmptyType from 'types/emptyType';
 
@@ -22,10 +22,10 @@ import {
   customButtonStyles
 } from './styled';
 
-// TODO: fix thi types
+// TODO: fix this types
 type formType = {
   fields: any;
-  submit:  () => void;
+  submit: () => void;
 }
 
 type FormProps = {

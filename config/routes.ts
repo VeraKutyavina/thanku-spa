@@ -1,3 +1,4 @@
 module.exports = {
-    AUTH: { name: 'auth', pattern: '/auth/:name', page: 'auth' },
+    SIGN_UP: { name: 'signup', pattern: '/auth/signup', page: 'auth/signup' },
+    SIGN_IN: { name: 'signin', pattern: '/auth/signin', page: 'auth/signin' },
 };
