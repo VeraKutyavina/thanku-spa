@@ -1,6 +1,7 @@
 import React from 'react';
-import { ItemWrapper, Textarea, customButtonStyles } from './styled';
 import Button from 'components/shared/atoms/Button';
+
+import { ItemWrapper, Textarea, customButtonStyles } from './styled';
 
 const PointsTextarea = () => {
   return(

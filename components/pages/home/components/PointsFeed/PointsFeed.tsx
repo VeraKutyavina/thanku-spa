@@ -1,7 +1,8 @@
 import React from 'react';
-import { Wrapper } from './styled';
 import PointsTextarea from '../PointsTextarea';
 import Transaction from '../Transaction';
+
+import { Wrapper } from './styled';
 
 const PointsFeed = () => {
   return(

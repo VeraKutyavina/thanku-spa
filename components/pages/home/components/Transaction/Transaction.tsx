@@ -1,6 +1,7 @@
 import React from 'react';
-import { ItemWrapper, UserWrapper, UserName, Text } from './styled';
 import ProfileImage from 'components/shared/atoms/ProfileImage';
+
+import { ItemWrapper, UserWrapper, UserName, Text } from './styled';
 
 const Transaction = () => {
   return(

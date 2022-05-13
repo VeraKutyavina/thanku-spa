@@ -1,6 +1,7 @@
 import React from 'react';
-import { Wrapper, ItemWrapper, Title, UserWrapper, UserName, UserInfoWrapper } from './styled';
 import ProfileImage from 'components/shared/atoms/ProfileImage';
+
+import { Wrapper, ItemWrapper, Title, UserWrapper, UserName, UserInfoWrapper } from './styled';
 
 const TopColum = () => {
   return(
