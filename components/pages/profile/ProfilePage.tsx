@@ -1,5 +1,7 @@
 import React from 'react';
+import withApolloClient from 'lib/withApolloClient';
 import DefaultTemplate from 'components/shared/templates/DefaultTemplate';
+
 import Transaction from '../home/components/Transaction';
 import UserInfo from './components/UserInfo';
 
@@ -22,4 +24,4 @@ const ProfilePage = () => {
   )
 }
 
-export default ProfilePage;
+export default withApolloClient(ProfilePage);

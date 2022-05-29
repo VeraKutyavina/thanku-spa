@@ -1,4 +1,5 @@
 import React from 'react';
+import withApolloClient from 'lib/withApolloClient';
 import DefaultTemplate from 'components/shared/templates/DefaultTemplate';
 
 import { Wrapper } from './styled'
@@ -16,4 +17,4 @@ const HomePage = () => {
   )
 }
 
-export default HomePage;
+export default withApolloClient(HomePage);
