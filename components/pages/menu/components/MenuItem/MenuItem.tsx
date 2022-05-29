@@ -1,24 +1,23 @@
 import React from 'react';
+import ProductType from 'types/product';
+
 import { ItemWrapper, Photo, Title, BonusWrapper, LeftMessage } from './styled';
 
-type ItemType = {
-  name: string,
-  photo: string,
-  count: number,
-}
 
 type MenuItemProps = {
-  item: ItemType,
+  item: ProductType,
 };
 
 const MenuItem = ({ item }: MenuItemProps) => {
-  const { name, photo, count } = item;
+  const { name, count, price } = item;
 
   return(
     <ItemWrapper>
-      <Photo />
+      <Photo>
+        Нет изображения
+      </Photo>
       <Title> {name} </Title>
-      <BonusWrapper> 700 points </BonusWrapper>
+      <BonusWrapper> {price} points </BonusWrapper>
       <LeftMessage> Доступно к покупке: {count} </LeftMessage>
     </ItemWrapper>
   )

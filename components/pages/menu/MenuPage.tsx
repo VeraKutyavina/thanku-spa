@@ -1,38 +1,19 @@
 import React from 'react';
-import DefaultTemplate from 'components/shared/templates/DefaultTemplate';
-import MenuList from './components/MenuList';
 import { useProduct } from 'lib/apollo/products';
 import withApolloClient from 'lib/withApolloClient';
 
-const items = [
-  {
-    name: 'Куртка',
-    photo: 'https',
-    count: 1,
-  },
-  {
-    name: 'Шапка',
-    photo: 'https',
-    count: 1,
-  },
-  {
-    name: 'Кружка',
-    photo: 'https',
-    count: 1,
-  },
-  {
-    name: 'Зонт',
-    photo: 'https',
-    count: 1,
-  },
-]
+import Loader from 'components/shared/atoms/Loader';
+import DefaultTemplate from 'components/shared/templates/DefaultTemplate';
+import MenuList from './components/MenuList';
 
 const MenuPage = () => {
-  const { poll } = useProduct();
+  const { products, loading } = useProduct();
 
   return(
     <DefaultTemplate>
-      <MenuList items={items} />
+      {loading && <Loader />}
+
+      {!loading &&  <MenuList items={products} />}
     </DefaultTemplate>
   )
 }

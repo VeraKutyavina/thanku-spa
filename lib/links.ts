@@ -5,8 +5,6 @@ export const createAuthHeaderLink = ({ cookie }) =>
     const accessToken = window.localStorage.getItem('accessToken');
     const authHeader = accessToken ? { Authorization: `Bearer ${accessToken}` } : {};
     const cookieHeader = cookie ? { Cookie: cookie } : {};
-    
-    console.log(accessToken, 'Hello')
 
     operation.setContext(({ headers }) => {
       return {
