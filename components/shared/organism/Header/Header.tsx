@@ -5,10 +5,13 @@ import ProfileImage from 'components/shared/atoms/ProfileImage';
 import routes from 'config/routes';
 
 import { useSignOut } from 'lib/apollo/auth';
+import { useCurrentProfile } from 'lib/apollo/currentProfile';
 import { Wrapper, Title, UserInfoWrapper, Name, customMenuStyles } from './styled'
 
 const Header = () => {
-  const [signOut] = useSignOut()
+  const { me } = useCurrentProfile();
+  const [signOut] = useSignOut();
+
   const menuItems = [
     { text: 'Профиль', url: '#' },
     { text: 'Каталог', url: routes.MENU.name },
@@ -24,7 +27,7 @@ const Header = () => {
         dropdown={
           <UserInfoWrapper>
             <ProfileImage avatar={null} />
-            <Name> Test Test </Name>
+            <Name> {me?.firstName} {me?.lastName} </Name>
           </UserInfoWrapper>
         }
       >
