@@ -20,6 +20,9 @@ export const Photo = styled.div(
     content: "";
     height: 15rem;
     background: ${colors.green};
+    display: flex;
+    align-items: center;
+    justify-content: center;
 `)
 
 export const Title = styled.div`

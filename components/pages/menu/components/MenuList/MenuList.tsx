@@ -1,15 +1,10 @@
 import React from 'react';
 import MenuItem from '../MenuItem';
 import { Wrapper } from './styled'
-
-type ItemType = {
-  name: string,
-  photo: string,
-  count: number,
-}
+import ProductType from 'types/product';
 
 type MenuListProps = {
-  items: ItemType[],
+  items: ProductType[],
 };
 
 const MenuList = ({ items }: MenuListProps) => {
