@@ -12,12 +12,13 @@ const withApolloClient = nextWithApollo(
         return new ApolloClient({
             ssrMode: typeof window === 'undefined',
             link: new HttpLink({
-                uri: `${process.env.API_URL}/graphql`,
+                uri: `${'http://127.0.0.1:3000'}/graphql`,
             }),
             headers: {
                 ...(headers as Record<string, string>),
             },
             cache: new InMemoryCache().restore(initialState || {}),
+            connectToDevTools: true,
         });
     },
     {
