@@ -1,6 +1,8 @@
 import React from 'react';
 import DefaultTemplate from 'components/shared/templates/DefaultTemplate';
 import MenuList from './components/MenuList';
+import { useProduct } from 'lib/apollo/products';
+import withApolloClient from 'lib/withApolloClient';
 
 const items = [
   {
@@ -26,6 +28,8 @@ const items = [
 ]
 
 const MenuPage = () => {
+  const { poll } = useProduct();
+
   return(
     <DefaultTemplate>
       <MenuList items={items} />
@@ -33,4 +37,4 @@ const MenuPage = () => {
   )
 }
 
-export default MenuPage;
+export default withApolloClient(MenuPage);

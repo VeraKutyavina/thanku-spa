@@ -21,5 +21,5 @@ export type SignUpMutationVariables = SignUpVariables;
 export type SignUpMutationResult = MutationResult<SignUpMutationData>;
 
 export type SignUpMutationData = {
-  signup: { me: User & Token };
+  signup: { me: User } & Token;
 };

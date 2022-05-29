@@ -1,10 +1,14 @@
 import React from 'react';
 import * as Yup from 'yup';
-import AuthForm from '../AuthForm';
+import { useSignIn } from 'lib/apollo/auth';
 import { REQUIRED_FIELD_VALIDATION, VALID_EMAIL_VALIDATION } from 'config/form';
+
+import AuthForm from '../AuthForm';
 import { Form, AuthFormWrapper } from './styled'
 
 const SignInForm = () => {
+  const [signin] = useSignIn();
+  
   const fields = [
     {
       type: 'email',
@@ -27,7 +31,7 @@ const SignInForm = () => {
 
   const form = {
     fields,
-    submit: () => {},
+    submit: signin,
   };
   
   return(

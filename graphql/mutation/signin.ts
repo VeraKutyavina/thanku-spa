@@ -5,13 +5,6 @@ export default gql`
     signin(input: $input) {
       accessToken
       me {
-        activities(
-          events: [USER_LOGGED_IN]
-          after: "string"
-          before: "string"
-          first: 1
-          last: 1
-        )
         avatarUrl
         birthdate
         bonusAllowance

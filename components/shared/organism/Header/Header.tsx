@@ -4,13 +4,15 @@ import NavigationList from 'components/shared/atoms/NavigationList';
 import ProfileImage from 'components/shared/atoms/ProfileImage';
 import routes from 'config/routes';
 
+import { useSignOut } from 'lib/apollo/auth';
 import { Wrapper, Title, UserInfoWrapper, Name, customMenuStyles } from './styled'
 
 const Header = () => {
+  const [signOut] = useSignOut()
   const menuItems = [
     { text: 'Профиль', url: '#' },
     { text: 'Каталог', url: routes.MENU.name },
-    { text: 'Выйти из профиля', url: routes.SIGN_IN.pattern },
+    { text: 'Выйти из профиля', onClick: () => signOut({}), type: 'action' },
   ];
   
   return(

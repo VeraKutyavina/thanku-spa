@@ -1,9 +1,11 @@
 import React from 'react';
 import * as Yup from 'yup';
-import AuthForm from '../AuthForm';
+
 import { REQUIRED_FIELD_VALIDATION, VALID_EMAIL_VALIDATION } from 'config/form';
+import { useSignUp } from 'lib/apollo/auth';
+
+import AuthForm from '../AuthForm';
 import { Form, AuthFormWrapper } from './styled'
-import useSignUp from '../../../../../lib/apollo/auth';
 
 const SignUpForm = () => {
   const [signUp] = useSignUp();
