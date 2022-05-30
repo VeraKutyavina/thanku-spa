@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import ProductType from 'types/product';
 import { useCreateOrder } from 'lib/apollo/order';
 import { useCurrentProfile } from 'lib/apollo/currentProfile';
