@@ -1,15 +1,16 @@
-import React, {PropsWithChildren} from 'react';
+import React, { MouseEventHandler, PropsWithChildren } from 'react';
 
 import { StyledButton } from './styled';
 
 type ButtonProps = {
   type: 'button' | 'submit' | 'reset' | unknown;
   customStyles: Function | undefined;
+  onClick: MouseEventHandler | undefined;
 };
 
-const Button = ({ children, customStyles, type = 'button',  ...rest }: PropsWithChildren<ButtonProps>) => {
+const Button = ({ children, customStyles, type = 'button', onClick, ...rest }: PropsWithChildren<ButtonProps>) => {
   return (
-    <StyledButton customStyles={customStyles} {...rest}>
+    <StyledButton onClick={onClick} customStyles={customStyles} {...rest}>
       {children}
     </StyledButton>
   );
