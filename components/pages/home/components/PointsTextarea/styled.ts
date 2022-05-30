@@ -10,10 +10,6 @@ export const ItemWrapper = styled.div(
     color: ${colors.grey};
     display: flex;
     flex-direction: column;
-    
-    .error {
-      color: ${colors.red};
-    }
   `,
 );
 
