@@ -1,4 +1,4 @@
-import React, {MouseEventHandler, PropsWithChildren} from 'react';
+import React, { MouseEventHandler, PropsWithChildren } from 'react';
 
 import { StyledButton } from './styled';
 
