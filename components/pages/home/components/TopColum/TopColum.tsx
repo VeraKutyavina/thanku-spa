@@ -11,25 +11,22 @@ const TopColum = () => {
         <UserWrapper>
           <UserInfoWrapper>
             <ProfileImage avatar={null} />
-            <UserName> Test Testovich </UserName>
+            <UserName> Anna Aleynik </UserName>
           </UserInfoWrapper>
-          40
         </UserWrapper>
 
         <UserWrapper>
           <UserInfoWrapper>
             <ProfileImage avatar={null} />
-            <UserName> Test Testovich </UserName>
+            <UserName> Vera Kutyavina </UserName>
           </UserInfoWrapper>
-          23
         </UserWrapper>
 
         <UserWrapper>
           <UserInfoWrapper>
             <ProfileImage avatar={null} />
-            <UserName> Test Testovich </UserName>
+            <UserName> Test Test </UserName>
           </UserInfoWrapper>
-          66
         </UserWrapper>
 
       </ItemWrapper>

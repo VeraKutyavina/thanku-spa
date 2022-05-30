@@ -2,11 +2,17 @@ import React from 'react';
 import PointsTextarea from '../PointsTextarea';
 import Transaction from '../Transaction';
 
-import { Wrapper } from './styled';
+import { useCurrentProfile } from 'lib/apollo/currentProfile';
+import { Wrapper, Balance } from './styled';
 
 const PointsFeed = () => {
+  const { me } = useCurrentProfile();
   return(
     <Wrapper>
+      {/*// @ts-ignore*/}
+      <Balance>
+        У вас есть  {me?.bonusAllowance} бонусов
+      </Balance>
       <PointsTextarea />
       <Transaction />
       <Transaction />
