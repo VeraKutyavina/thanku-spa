@@ -10,6 +10,10 @@ export const ItemWrapper = styled.div(
     color: ${colors.grey};
     display: flex;
     flex-direction: column;
+    
+    .error {
+      color: ${colors.red};
+    }
   `,
 );
 
@@ -31,5 +35,5 @@ export const Textarea = styled.textarea(
 export const customButtonStyles = () => css`
   width: 8rem;
   padding: 0.7rem;
-  margin-top: 0.5rem;
+  margin: 0.5rem 0;
 `;

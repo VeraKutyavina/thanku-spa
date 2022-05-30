@@ -6,7 +6,7 @@ export type SendBonusVariables = {
   receiverId: Number;
 };
 
-export type SendBonusMutationVariables = { input: SendBonusVariables };
+export type SendBonusMutationVariables = SendBonusVariables;
 
 export type SendBonusMutationResult = MutationResult<SendBonusMutationData>;
 
