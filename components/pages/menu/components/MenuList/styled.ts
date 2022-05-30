@@ -7,3 +7,9 @@ export const Wrapper = styled.div`
   flex-wrap: wrap;
   row-gap: 1rem;
 `
+
+export const Balance = styled.div`
+  position: absolute;
+  top: -2rem;
+  left: 10rem;
+`
