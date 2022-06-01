@@ -22,12 +22,14 @@ const PointsTextarea = () => {
 
     setError('');
 
+    setText('');
+
     sendBonus({ amount: +points, comment: text, receiverId: receiver.id })
   }
   
   return(
     <ItemWrapper>
-      <Textarea onChange={(event) => setText(event.target.value)} placeholder="+100 @username add description for #win-win-win" />
+      <Textarea value={text} onChange={(event) => setText(event.target.value)} placeholder="+100 @username add description for #win-win-win" />
       <Button type='submit' onClick={onClick} customStyles={customButtonStyles} > Give </Button>
       <span className="error"> {error} </span>
     </ItemWrapper>
