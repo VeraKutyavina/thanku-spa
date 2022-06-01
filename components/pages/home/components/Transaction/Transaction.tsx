@@ -3,15 +3,16 @@ import ProfileImage from 'components/shared/atoms/ProfileImage';
 
 import { ItemWrapper, UserWrapper, UserName, Text } from './styled';
 
-const Transaction = () => {
+const Transaction = ({ transfer }) => {
+  const { sender, comment } = transfer;
   return(
     <ItemWrapper>
       <UserWrapper>
         <ProfileImage avatar={null} />
-        <UserName> Anastasia Kovalevskaya </UserName>
+        <UserName> {sender.firstName} {sender.lastName} </UserName>
       </UserWrapper>
       <Text>
-        +20 @RushanaKhalimova agreement hero 💪🏽 #work-hard-play-hard
+        {comment}
       </Text>
     </ItemWrapper>
   )

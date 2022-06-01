@@ -18,6 +18,7 @@ export const Title = styled.div(
       color: ${colors.grey};
       font-weight: bold;
       font-size: 1.5rem;
+      cursor: pointer;
     `,
 );
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import Dropdown from 'components/shared/atoms/Dropdown';
 import NavigationList from 'components/shared/atoms/NavigationList';
 import ProfileImage from 'components/shared/atoms/ProfileImage';
@@ -20,7 +21,9 @@ const Header = () => {
   
   return(
     <Wrapper>
-      <Title> ThankU </Title>
+      <Link passHref href={routes.HOME.name}>
+        <Title> ThankU </Title>
+      </Link>
 
       <Dropdown
         customStyles={customMenuStyles}

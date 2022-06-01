@@ -20,8 +20,9 @@ const MenuItem = ({ item }: MenuItemProps) => {
 
   const [createOrder] = useCreateOrder();
   
-  const onSubmit = () => {
-    createOrder({ price: price, productId: id, quantity: 1 })
+  const onSubmit = async () => {
+    await createOrder({ price: price, productId: id, quantity: 1 });
+    setIsModalOpen(false);
   }
 
   return(
