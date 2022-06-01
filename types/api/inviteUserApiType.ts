@@ -8,7 +8,7 @@ export type InviteUserVariables = {
   role: string;
 };
 
-export type  InviteUserMutationVariables = { input: InviteUserVariables };
+export type  InviteUserMutationVariables = { userParams: InviteUserVariables };
 
 export type  InviteUserMutationResult = MutationResult<InviteUserMutationData>;
 

@@ -7,7 +7,7 @@ export type CreateProductVariables = {
   name: string;
 };
 
-export type  CreateProductMutationVariables = { input: CreateProductVariables };
+export type  CreateProductMutationVariables = CreateProductVariables;
 
 export type  CreateProductMutationResult = MutationResult<CreateProductMutationData>;
 
