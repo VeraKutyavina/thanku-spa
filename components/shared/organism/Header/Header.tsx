@@ -16,9 +16,11 @@ const Header = () => {
   const menuItems = [
     { text: 'Профиль', url: '#' },
     { text: 'Каталог', url: routes.MENU.name },
-    me?.role === 'MANAGER' && { text: 'Управление', url: routes.MENU.name },
+    me?.role === 'manager' && { text: 'Управление', url: routes.MANAGE.name },
     { text: 'Выйти из профиля', onClick: () => signOut({}), type: 'action' },
   ].filter(Boolean);
+
+  console.log(me)
   
   return(
     <Wrapper>

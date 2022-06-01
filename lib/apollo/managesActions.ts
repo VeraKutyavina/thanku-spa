@@ -13,7 +13,11 @@ export const useCreateProduct = (): [((variables: CreateProductVariables) => Pro
   const [mutation, mutationState] = useMutation<CreateProductMutationData, CreateProductMutationVariables>(CreateProduct);
 
   const mutate = async ({ count, price, name }: CreateProductVariables) => {
-    const createProductInput = { count, price, name };
+    const createProductInput = {
+      count: +count,
+      price: +price,
+      name
+    };
 
     try {
       await mutation({ variables: createProductInput });
