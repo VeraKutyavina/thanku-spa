@@ -5,9 +5,6 @@ export default gql`
     sendBonus(amount: $amount, comment: $comment, receiverId: $receiverId) {
       bonusTransfer {
         amount
-        bonusTransfers {
-          amount
-        }
       }
     }
   }
