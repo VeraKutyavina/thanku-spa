@@ -10,7 +10,7 @@ import { Wrapper, Balance } from './styled';
 
 const PointsFeed = () => {
   const { me } = useCurrentProfile();
-  const { bonusTransfers, loading } = useBonusTransfers();
+  const { bonusTransfers, loading } = useBonusTransfers({});
 
   return(
     <Wrapper>

@@ -1,8 +1,8 @@
 import { gql } from '@apollo/client';
 
 export default gql`
-  query BonusTransfers($first: Int)  {
-    bonusTransfers(first: $first) {
+  query BonusTransfers($first: Int, $userId: ID, $kind: BonusTransfersKind)  {
+    bonusTransfers(first: $first, userId: $userId, kind: $kind) {
       edges {
         cursor
         node {

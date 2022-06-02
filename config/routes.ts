@@ -4,6 +4,7 @@ const routes = {
   MENU: { name: 'menu', pattern: '/menu', page: 'menu' },
   HOME: { name: 'home', pattern: '/home', page: 'home' },
   MANAGE: { name: 'manage', pattern: '/manage', page: 'manage' },
+  PROFILE: { name: 'profile', pattern: '/profile', page: 'profile' },
 };
 
 export default routes;

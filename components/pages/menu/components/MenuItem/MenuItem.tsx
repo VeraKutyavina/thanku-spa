@@ -14,6 +14,7 @@ type MenuItemProps = {
 
 const MenuItem = ({ item }: MenuItemProps) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isSuccessOpen, setisSuccessOpen] = useState(false);
   const { me } = useCurrentProfile();
 
   const { name, count, price, id } = item;
@@ -23,6 +24,7 @@ const MenuItem = ({ item }: MenuItemProps) => {
   const onSubmit = async () => {
     await createOrder({ price: price, productId: id, quantity: 1 });
     setIsModalOpen(false);
+    setisSuccessOpen(true);
   }
 
   return(
@@ -44,6 +46,12 @@ const MenuItem = ({ item }: MenuItemProps) => {
           </>
         }
         <Button type="submit" customStyles={() => {}} onClick={onSubmit}> Купить </Button>
+      </ModalWindow>
+
+      <ModalWindow isOpen={isSuccessOpen} setIsOpen={setisSuccessOpen} title="Покупка совершена успешно!">
+        <div>Менеджер свяжется с вами в течении дня </div>
+        <br />
+        <Button type="submit" customStyles={() => {}} onClick={() => setisSuccessOpen(false)}> Продолжить </Button>
       </ModalWindow>
 
     </ItemWrapper>

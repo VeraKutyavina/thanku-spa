@@ -14,7 +14,7 @@ const Header = () => {
   const [signOut] = useSignOut();
 
   const menuItems = [
-    { text: 'Профиль', url: '#' },
+    { text: 'Профиль', url: routes.PROFILE.name },
     { text: 'Каталог', url: routes.MENU.name },
     me?.role === 'manager' && { text: 'Управление', url: routes.MANAGE.name },
     { text: 'Выйти из профиля', onClick: () => signOut({}), type: 'action' },
