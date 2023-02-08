@@ -39,31 +39,17 @@ jobs:
                 }
               },
               {
-                  "type": "section",
-                  "text": {
-                    "type": "mrkdwn",
-                    "text": "*Date:*\n${{ steps.date.outputs.date }}"
-                  }
-                },
-               {
                 "type": "section",
                 "text": {
                   "type": "mrkdwn",
-                  "text": "*Information:*"
+                  "text": "*Date:*\n${{ steps.date.outputs.date }}"
                 }
               },
               {
                 "type": "section",
                 "text": {
                   "type": "mrkdwn",
-                  "text": ${{ toJSON(github.event.release.body) }}
+                  "text": "*Information:*\n${{ github.event.release.html_url }}"
                 }
               },
-              {
-                "type": "section",
-                "text": {
-                  "type": "mrkdwn",
-                  "text": "${{ github.event.release.html_url }}"
-                }
-              }
             ]
