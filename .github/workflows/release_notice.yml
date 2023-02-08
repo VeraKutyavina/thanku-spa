@@ -8,6 +8,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       # To check the github context
+      - name: Get current date
+        id: date
+        run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
       - name: Dump Github context
         env:
           GITHUB_CONTEXT: ${{ toJSON(github) }}
@@ -25,7 +28,7 @@ jobs:
                 "type": "header",
                 "text": {
                   "type": "plain_text",
-                  "text": "Fronted ${{ github.event.release.name }} is published!"
+                  "text": "Fronted ${{ github.event.release.name }} is out!"
                 }
               },
               {
@@ -35,6 +38,13 @@ jobs:
                   "text": "*Author:*\n${{ github.actor }}"
                 }
               },
+              {
+                  "type": "section",
+                  "text": {
+                    "type": "mrkdwn",
+                    "text": "*Date:*\n${{ steps.date.outputs.date }}"
+                  }
+                },
                {
                 "type": "section",
                 "text": {
