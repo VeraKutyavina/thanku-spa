@@ -7,10 +7,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      # To check the github context
       - name: Get current date
         id: date
-        run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
+        run: echo "::set-output name=date::$(date +'%d/%m/%Y')"
+      # To check the github context
       - name: Dump Github context
         env:
           GITHUB_CONTEXT: ${{ toJSON(github) }}
