@@ -13,10 +13,11 @@ jobs:
       - name: Convert HTML links to Slack mrkdwn format
         id: get-release-body
         env:
-          GITHUB_CONTEXT: ${{ github.event.release.body }}
+          GITHUB_CONTEXT: ${{ toJSON(github.event.release.body) }}
         run: |
-          body=$( echo $GITHUB_CONTEXT | sed -r 's/(\[(.*)\])(\((.*)\))/<\4|\2>/g' )
+          body=$( echo $GITHUB_CONTEXT | sed 's/\[\(.*\)\]\(.*\)/\1/g' )
           echo "::set-output name=mrkdwn_body::$body"
+          echo $GITHUB_CONTEXT
           echo $body
       - name: Slack Notification on SUCCESS
         if: success()
