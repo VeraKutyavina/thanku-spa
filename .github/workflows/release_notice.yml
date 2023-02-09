@@ -11,6 +11,11 @@ jobs:
         id: date
         run: echo "::set-output name=date::$(date +'%d/%m/%Y')"
       # To check the github context
+      - name: Convert HTML links to Slack mrkdwn format
+        id: get-release-body
+        run: |
+          body=$( github.event.release.body | sed -E 's/(\[(.*)\])(\((.*)\))/<\4|\2>/' )
+          echo "::set-output name=mrkdwn_body::$body"
       - name: Dump Github context
         env:
           GITHUB_CONTEXT: ${{ toJSON(github) }}
@@ -49,7 +54,21 @@ jobs:
                 "type": "section",
                 "text": {
                   "type": "mrkdwn",
-                  "text": "*Information:*\n${{ github.event.release.html_url }}"
+                  "text": "*Information:*"
+                }
+              },
+              {
+                "type": "section",
+                "text": {
+                  "type": "mrkdwn",
+                  "text": ${{ steps.get-release-body.outputs.mrkdwn_body }}
+                }
+              },
+              {
+                "type": "section",
+                "text": {
+                  "type": "mrkdwn",
+                  "text": "${{ github.event.release.html_url }}"
                 }
               },
             ]
