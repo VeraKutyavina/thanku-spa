@@ -66,6 +66,20 @@ jobs:
                 "type": "section",
                 "text": {
                   "type": "mrkdwn",
+                  "text": "${{ fromJSON(steps.get-release-body.outputs.mrkdwn_body) }}"
+                }
+              },
+              {
+                "type": "section",
+                "text": {
+                  "type": "mrkdwn",
+                  "text": ${{ steps.get-release-body.outputs.mrkdwn_body }}
+                }
+              },
+              {
+                "type": "section",
+                "text": {
+                  "type": "mrkdwn",
                   "text": "${{ github.event.release.html_url }}"
                 }
               },
