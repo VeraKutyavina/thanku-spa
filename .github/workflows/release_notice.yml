@@ -9,14 +9,14 @@ jobs:
     steps:
       - name: Get current date
         id: date
-        run: echo "::set-output name=date::$(date +'%d/%m/%Y')"
+        run: echo "date=$(date +'%d/%m/%Y')" >> $GITHUB_OUTPUT
       - name: Convert HTML links to Slack mrkdwn format
         id: get-release-body
         env:
-          GITHUB_CONTEXT: ${{ github.event.release.body }}
+          GITHUB_CONTEXT: ${{ toJSON(github.event.release.body) }}
         run: |
           body=$( echo $GITHUB_CONTEXT | sed 's/\[\(.*\)\]\(.*\)/\1/g' )
-          echo "::set-output name=mrkdwn_body::$body"
+          echo "mrkdwn_body=$body" >> $GITHUB_OUTPUT
           echo $GITHUB_CONTEXT
           echo $body
       - name: Slack Notification on SUCCESS
@@ -32,7 +32,7 @@ jobs:
                 "type": "header",
                 "text": {
                   "type": "plain_text",
-                  "text": "Fronted ${{ github.event.release.name }} is out!"
+                  "text": "Frontend ${{ github.event.release.name }} is out!"
                 }
               },
               {
@@ -60,7 +60,7 @@ jobs:
                 "type": "section",
                 "text": {
                   "type": "mrkdwn",
-                  "text": "${{ steps.get-release-body.outputs.mrkdwn_body }}"
+                  "text": ${{ toJSON(steps.get-release-body.outputs.mrkdwn_body) }}
                 }
               },
               {
