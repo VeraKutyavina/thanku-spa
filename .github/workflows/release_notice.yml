@@ -16,9 +16,9 @@ jobs:
           GITHUB_CONTEXT: ${{ toJSON(github.event.release.body) }}
         run: |
           body=$( echo -e $GITHUB_CONTEXT | sed 's/\[\(.*\)\](\(.*\))/<\2|\1>/g' )
-          echo 'mrkdwn_body<<EOF' >> $GITHUB_ENV
-          echo $body >> $GITHUB_ENV
-          echo 'EOF' >> $GITHUB_ENV
+          echo 'mrkdwn_body<<EOF' >> $GITHUB_OUTPUT
+          echo $body >> $GITHUB_OUTPUT
+          echo 'EOF' >> $GITHUB_OUTPUT
       - name: Slack Notification on SUCCESS
         if: success()
         uses: tokorom/action-slack-incoming-webhook@main
@@ -60,7 +60,7 @@ jobs:
                 "type": "section",
                 "text": {
                   "type": "mrkdwn",
-                  "text": '${{ steps.get-release-body.outputs.mrkdwn_body }}'
+                  "text": ${{ steps.get-release-body.outputs.mrkdwn_body }}
                 }
               },
               {
