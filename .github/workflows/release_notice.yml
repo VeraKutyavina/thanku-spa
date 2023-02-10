@@ -17,7 +17,7 @@ jobs:
         run: |
           body=$( echo -e $GITHUB_CONTEXT | sed 's/\[\(.*\)\](\(.*\))/<\2|\1>/g' )
           echo 'mrkdwn_body<<EOF' >> $GITHUB_OUTPUT
-          echo "${body//$'\n'/\\n}" >> $GITHUB_OUTPUT
+          echo ${body} | sed 's/$/\\n/' | tr -d '\n' >> $GITHUB_OUTPUT
           echo 'EOF' >> $GITHUB_OUTPUT
       - name: Slack Notification on SUCCESS
         if: success()
