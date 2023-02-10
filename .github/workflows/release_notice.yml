@@ -60,7 +60,7 @@ jobs:
                 "type": "section",
                 "text": {
                   "type": "mrkdwn",
-                  "text": ${{ steps.get-release-body.outputs.mrkdwn_body }}
+                  "text": ${{ toJSON(steps.get-release-body.outputs.mrkdwn_body) }}
                 }
               },
               {
