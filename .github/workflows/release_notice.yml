@@ -15,7 +15,7 @@ jobs:
         env:
           GITHUB_CONTEXT: ${{ toJSON(github.event.release.body) }}
         run: |
-          body=$( echo -e $GITHUB_CONTEXT | sed 's/\[\(.*\)\](\(.*\))/<\2|\1>/g' | sed '$! s/$/\\n/' | tr -d '\n' )
+          body=$( echo -e $GITHUB_CONTEXT | sed 's/\[\(.*\)\](\(.*\))/<\2|\1>/g' | perl -e 'chomp(@a=<>); print join ("\\n", @a), "\n"' )
           echo "mrkdwn_body=$body" >> $GITHUB_OUTPUT
           echo $body
       - name: Slack Notification on SUCCESS
