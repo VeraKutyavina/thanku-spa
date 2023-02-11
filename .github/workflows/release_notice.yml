@@ -31,7 +31,7 @@ jobs:
                 "type": "header",
                 "text": {
                   "type": "plain_text",
-                  "text": "Frontend ${{ github.event.release.name }} is out!"
+                  "text": "Backend ${{ github.event.release.name }} is out!"
                 }
               },
               {
